@@ -122,9 +122,12 @@ function App() {
         <Box>
           <Heading level="1" size="large" textAlign="center">
             <span role="img" aria-label="happy hacking">
-              🤘🤩
-            </span>{" "}
+              🤘
+            </span>
             Happy Hacking!
+            <span role="img" aria-label="happy hacking">
+              🤩
+            </span>
           </Heading>
         </Box>
       </Page>
