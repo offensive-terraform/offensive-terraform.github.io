@@ -13,8 +13,10 @@ import {
 } from "grommet";
 import { Github, More } from "grommet-icons";
 import { grommet, dark } from "grommet/themes";
+import firebase from "./firebase";
+
 import Page from "./components/Page";
-import data from "./data";
+// import data from "./data";
 
 const THEMES = {
   grommet,
@@ -24,6 +26,16 @@ const THEMES = {
 function App() {
   const [themeName, setThemeName] = React.useState("grommet");
   const [themeChecked, setThemeChecked] = React.useState(true);
+  const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const db = firebase.firestore();
+      const response = await db.collection("modules").get();
+      setData(response.docs.map((doc) => doc.data()));
+    };
+    fetchData();
+  }, []);
 
   const handleThemeChange = (checked) => {
     if (checked) {
