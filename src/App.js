@@ -5,7 +5,8 @@ import { grommet, dark } from "grommet/themes";
 import firebase from "./firebase";
 import Page from "./components/Page";
 import CardPlaceHolder from "./components/CardPlaceHolder";
-// import OffensiveTerraformModuleCard from "./components/OffensiveTerraformModuleCard";
+import ErrorBoundary from "./components/ErrorBoundary";
+
 const OffensiveTerraformModuleCard = lazy(() =>
   import("./components/OffensiveTerraformModuleCard")
 );
@@ -53,12 +54,14 @@ function App() {
         <Box>
           <Box flex direction="row" justify="center" wrap={true}>
             {data.map((offensiveModule, index) => (
-              <Suspense fallback={<CardPlaceHolder />}>
-                <OffensiveTerraformModuleCard
-                  offensiveModule={offensiveModule}
-                  key={index}
-                />
-              </Suspense>
+              <ErrorBoundary>
+                <Suspense fallback={<CardPlaceHolder />}>
+                  <OffensiveTerraformModuleCard
+                    offensiveModule={offensiveModule}
+                    key={index}
+                  />
+                </Suspense>
+              </ErrorBoundary>
             ))}
           </Box>
         </Box>
