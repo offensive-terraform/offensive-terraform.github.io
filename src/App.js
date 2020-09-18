@@ -107,12 +107,14 @@ function App() {
                     icon={<Github color="plain" />}
                     href={offensiveModule.github}
                     target="_blank"
+                    rel="noreferrer"
                     hoverIndicator
                   />
                   <Button
                     icon={<More color="brand" />}
                     href={offensiveModule.terraform}
                     target="_blank"
+                    rel="noreferrer"
                     hoverIndicator
                   />
                 </CardFooter>

@@ -41,6 +41,7 @@ const Nav = (props) => {
           plain
           href="https://registry.terraform.io/namespaces/offensive-terraform"
           target="_blank"
+          rel="noreferrer"
         >
           {({ hover }) => (
             <Box
