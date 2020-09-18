@@ -85,6 +85,11 @@ function App() {
                       src={
                         offensiveModule.provider === "AWS" ? "./aws.png" : ""
                       }
+                      alt={
+                        offensiveModule.provider === "AWS"
+                          ? "Offensive Terraform Modules for AWS Cloud"
+                          : ""
+                      }
                     />
                     <Box>
                       <Text size="small" weight="bold">
