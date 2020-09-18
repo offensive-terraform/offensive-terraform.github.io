@@ -13,15 +13,20 @@ const OffensiveTerraformModuleCard = ({ offensiveModule }) => {
           alt={offensiveModule.desc}
         />
         <Box direction="row" gap="small" margin="small" align="center">
-          <Image
-            width="50px"
-            src={offensiveModule.provider === "AWS" ? "./aws.png" : ""}
-            alt={
-              offensiveModule.provider === "AWS"
-                ? "Offensive Terraform Modules for AWS Cloud"
-                : ""
-            }
-          />
+          <picture>
+            <source srcset="./aws.webp" type="image/webp" />
+            <source srcset="./aws.png" type="image/png" />
+            <Image
+              width="50px"
+              src={offensiveModule.provider === "AWS" ? "./aws.png" : ""}
+              alt={
+                offensiveModule.provider === "AWS"
+                  ? "Offensive Terraform Modules for AWS Cloud"
+                  : ""
+              }
+            />
+          </picture>
+
           <Box>
             <Text size="small" weight="bold">
               {offensiveModule.name}
