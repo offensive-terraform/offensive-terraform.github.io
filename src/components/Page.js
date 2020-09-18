@@ -1,6 +1,7 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Box } from "grommet";
-import Nav from "./Nav";
+
+const Nav = lazy(() => import("./Nav"));
 
 const Page = ({ children, background, themeChecked, onThemeChange }) => (
   <Box pad="large" background={background}>
