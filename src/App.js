@@ -72,6 +72,7 @@ function App() {
                     width="327px"
                     fit="cover"
                     src={offensiveModule.image}
+                    alt={offensiveModule.desc}
                   />
                   <Box
                     direction="row"
