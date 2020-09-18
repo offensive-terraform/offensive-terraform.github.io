@@ -54,8 +54,8 @@ function App() {
         <Box>
           <Box flex direction="row" justify="center" wrap={true}>
             {data.map((offensiveModule, index) => (
-              <ErrorBoundary>
-                <Suspense fallback={<CardPlaceHolder />}>
+              <ErrorBoundary key={index}>
+                <Suspense fallback={<CardPlaceHolder />} key={index}>
                   <OffensiveTerraformModuleCard
                     offensiveModule={offensiveModule}
                     key={index}
