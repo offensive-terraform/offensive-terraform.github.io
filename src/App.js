@@ -1,6 +1,14 @@
 import React, { lazy, Suspense } from "react";
 import { Box, Grommet, Heading, Paragraph } from "grommet";
 import { grommet, dark } from "grommet/themes";
+import {
+  RedditShareButton,
+  RedditIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from "react-share";
 
 import firebase from "./firebase";
 import Page from "./components/Page";
@@ -14,6 +22,13 @@ const OffensiveTerraformModuleCard = lazy(() =>
 const THEMES = {
   grommet,
   dark,
+};
+
+const share = {
+  url: "offensive-terraform.github.io",
+  iconSize: 60,
+  round: true,
+  bgColor: "#333333",
 };
 
 function App() {
@@ -49,6 +64,31 @@ function App() {
           <Paragraph size="xxlarge" textAlign="center">
             Automated multi step offensive attack modules with Infrastructure as
             Code(IAC)
+          </Paragraph>
+          <Paragraph>
+            <Box direction="row" gap="small">
+              <RedditShareButton url={share.url}>
+                <RedditIcon
+                  size={share.iconSize}
+                  round={share.round}
+                  bgStyle={{ fill: share.bgColor }}
+                />
+              </RedditShareButton>
+              <TwitterShareButton url={share.url}>
+                <TwitterIcon
+                  size={share.iconSize}
+                  round={share.round}
+                  bgStyle={{ fill: share.bgColor }}
+                />
+              </TwitterShareButton>
+              <LinkedinShareButton url={share.url}>
+                <LinkedinIcon
+                  size={share.iconSize}
+                  round={share.round}
+                  bgStyle={{ fill: share.bgColor }}
+                />
+              </LinkedinShareButton>
+            </Box>
           </Paragraph>
         </Box>
         <Box>
