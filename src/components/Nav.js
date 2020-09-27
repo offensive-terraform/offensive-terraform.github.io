@@ -7,7 +7,7 @@ import {
   Button,
   CheckBox,
 } from "grommet";
-import { Cloud } from "grommet-icons";
+import { Cloud, Favorite } from "grommet-icons";
 
 const Nav = (props) => {
   const size = React.useContext(ResponsiveContext);
@@ -39,7 +39,7 @@ const Nav = (props) => {
       <Box direction="row" gap="small">
         <Button
           plain
-          href="https://registry.terraform.io/namespaces/offensive-terraform"
+          href="https://www.patreon.com/offensiveterraform"
           target="_blank"
           rel="noreferrer"
         >
@@ -48,8 +48,11 @@ const Nav = (props) => {
               pad={{ vertical: "small", horizontal: "medium" }}
               round="xlarge"
               background={hover ? "active" : "control"}
+              direction="row"
+              gap="small"
             >
-              <Text>Modules</Text>
+              <Favorite />
+              <Text icon> Sponsor</Text>
             </Box>
           )}
         </Button>
