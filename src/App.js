@@ -63,7 +63,7 @@ function App() {
           </Heading>
           <Paragraph size="xxlarge" textAlign="center">
             Automated multi step offensive attack modules with Infrastructure as
-            Code(IAC)
+            Code(IaC)
           </Paragraph>
           <Paragraph>
             <Box direction="row" gap="small">
